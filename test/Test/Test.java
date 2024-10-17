@@ -26,7 +26,7 @@ public class Test {
         // t.insert();
         // t.delete();
         // t.SearchById();
-        t.update();
+       // t.update();
     }
     //metodo para testear la conexion a la bd
 
