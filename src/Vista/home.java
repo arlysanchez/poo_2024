@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Vista.reserva.ListReserva;
+import java.awt.BorderLayout;
+
 /**
  *
  * @author tpp
@@ -42,6 +45,9 @@ public class home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         principalPanel.setBackground(new java.awt.Color(255, 255, 255));
+        principalPanel.setMinimumSize(new java.awt.Dimension(930, 555));
+        principalPanel.setName(""); // NOI18N
+        principalPanel.setPreferredSize(new java.awt.Dimension(930, 555));
         principalPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
@@ -149,12 +155,12 @@ public class home extends javax.swing.JFrame {
                 .addComponent(btnClientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(btncloseSesion)
                 .addGap(19, 19, 19))
         );
 
-        principalPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 520));
+        principalPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 560));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -169,7 +175,7 @@ public class home extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addComponent(jLabel2)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,30 +185,30 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        principalPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 550, 70));
+        principalPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 510, 70));
 
         Content.setBackground(new java.awt.Color(255, 204, 204));
+        Content.setPreferredSize(new java.awt.Dimension(700, 500));
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 490, Short.MAX_VALUE)
         );
 
-        principalPanel.add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 550, 450));
+        principalPanel.add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 650, 490));
+        Content.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(principalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(principalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,11 +219,19 @@ public class home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
+       
+        
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservaActionPerformed
-        // TODO add your handling code here:
+      ListReserva lista = new ListReserva();
+      lista.setSize(700, 500);
+        lista.setLocation(0, 0);
+        Content.removeAll();
+        Content.add(lista, BorderLayout.CENTER);
+        Content.revalidate();
+        Content.repaint();
+        
     }//GEN-LAST:event_btnReservaActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed

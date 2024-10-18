@@ -81,7 +81,7 @@ public class ClientMain {
 
     public void SearchById() {
         IClientDao clienteDao = new ClienteDaoImpl();
-        Cliente c = clienteDao.searchById(3);
+        Cliente c = clienteDao.searchById(2);
         if (c != null) {
             System.out.println("idcliente:" + c.getIdcliente());
             System.out.println("nombre:" + c.getNombre());

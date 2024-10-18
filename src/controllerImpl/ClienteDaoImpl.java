@@ -233,5 +233,50 @@ public class ClienteDaoImpl implements IClientDao{
         }
         return lista;
     }
+
+    @Override
+    public Cliente searchByDNI(String dni) {
+        Cliente cl = null;
+        PreparedStatement st;
+        //resultado que devuelve los datos de la base de datos
+        ResultSet rs;
+        //declaro la variable que va contener la consulta a la base de datos
+        String query = null;
+        try {
+            //sentencia de sql para traer todas las reservas
+            query = "SELECT * FROM cliente WHERE dni = ?";
+            cn = ConexionSingleton.getConnection();
+            st = cn.prepareStatement(query);
+            st.setString(1, dni);
+            rs = st.executeQuery();
+            if (rs.next()) {
+                cl = new Cliente();
+
+                cl.setIdcliente(rs.getInt("idcliente"));
+                cl.setNombre(rs.getString("nombre"));
+                cl.setApellidos(rs.getString("apellidos"));
+                cl.setDni(rs.getString("dni"));
+                cl.setEmail(rs.getString("email"));
+                cl.setGenero(rs.getString("genero"));
+                
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Error al buscar un cliente por DNI" + e.getMessage());
+            try {
+                cn.rollback();
+            } catch (Exception ex) {
+            }
+            
+            System.out.println("Error, No se pudo buscar un cliente por ID");
+        } finally {
+            if (cn != null) {
+                try {
+                } catch (Exception e) {
+                }
+            }
+        }
+        return cl;
+    }
     
 }

@@ -19,4 +19,6 @@ public interface IClientDao {
     //metodo para listar las reservas
     public List<Cliente> listAll();
     
+    public Cliente searchByDNI(String dni);
+    
 }
